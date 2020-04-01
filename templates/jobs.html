@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jobs</title>
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/bootstrap.min.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/jobs/jobs.css') }}"/>
+
+    <script type = "text/javascript"  src = "{{ url_for('static', filename = 'js/jquery-3.4.1.min.js') }}" >
+    </script>
+
+
+    <script type = "text/javascript"  src = "{{ url_for('static', filename = 'js/bootstrap.min.js') }}" >
+    </script>
+
+
+
+</head>
+<body >
+
+<div class="jobs">
+
+    <table class="table-striped ">
+        <tr>
+            <th>Title</th><th>Salary</th><th>Skills</th>
+        </tr>
+        <!--Loop by all jobs-->
+
+        {% for job_code, job_data in jobs.items() %}
+        <tr>
+            <td>{{ job_data['title'] }}</td> <td>{{ job_data['salary'] }}</td> <td>{{ (', ').join(job_data['skills']) }} </td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+<div>
+
+</body>
+</html>
