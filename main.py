@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request,jsonify
+from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
 
@@ -22,7 +22,7 @@ def addjob():
                      'skills': set(request.form['skill'].split(','))
                   }
 
-        return jsonify({'status':'ok','errors':None,'redirect': request.url_root+'/jobs'});
+        return jsonify({'status':'ok', 'errors':None,'redirect': request.url_root+'/jobs'});
 
     else:
 
@@ -32,7 +32,7 @@ def addjob():
 if __name__ == '__main__':
 
 
-   # db emulation
+   # dao emulation
 
    jobs = {
       'job code1': {
