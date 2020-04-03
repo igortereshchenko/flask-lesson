@@ -3,6 +3,18 @@ from flask import Flask, render_template, request, jsonify
 app = Flask(__name__)
 
 
+# TODO
+@app.route('/customers')
+def customers():
+
+   return ''
+
+
+
+# TODO
+@app.route('/vendors')
+def customers():
+    return ''
 
 
 @app.route('/jobs')
